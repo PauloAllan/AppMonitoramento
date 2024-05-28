@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 16px;
+    background-color: #f4f4f9; /* Cor de fundo suave */
+  }
+  
+  ion-card {
+    width: 100%;
+    max-width: 400px;
+    --ion-background-color: #ffffff; /* Fundo branco para o card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para elevação */
+  }
+  
+  ion-item {
+    --background: transparent; /* Remove o fundo preto */
+    --border-color: #ccc; /* Cor da borda suave */
+    --ion-color: #000; /* Cor do texto */
+  }
+  
+  ion-button {
+    margin-top: 16px;
+  }
+  
+  ion-card-title {
+    text-align: center;
+  }
+  
+  ion-text {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+  }
+  

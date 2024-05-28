@@ -1,0 +1,45 @@
+<ion-content class="ion-padding" *ngIf="isLoading">
+  <div class="loading-container">
+    <div class="loader"></div>
+  </div>
+</ion-content>
+
+
+
+<ion-content class="ion-padding" *ngIf="!isLoading">
+  <div class="section-1" *ngIf="mostrarBoasVindas">
+    <ion-card>
+      <div class="welcome-message">
+        <ion-icon name="pulse-outline"></ion-icon>
+        <p class="p1">Seja bem-vindo <br> ao <strong>AppMonitoramento</strong></p>
+        <p class="p2">Aqui você poderá começar sua jornada para uma vida melhor e mais saudável!</p>
+      </div>
+    </ion-card>
+    <div class="image" [class.rotating]="isRotating" (click)="toggleRotation()">
+      <img src="assets/medico.png" alt="Médico">
+    </div>
+    <div class="buttons">
+      <ion-button class="custom-button" expand="block" (click)="mostrarProximaTela()">
+        Próximo
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <div *ngIf="!mostrarBoasVindas">
+    <div class="welcome-message">
+      <p><strong>Vamos começar a jornada?</strong></p>
+    </div>
+    <div class="image image2">
+      <img src="assets/perfil.png" alt="Perfil">
+    </div>
+    <div class="buttons btn2">
+      <ion-button class="custom-button" expand="block" (click)="login()">
+        <ion-icon name="person"></ion-icon> Login
+      </ion-button>
+      <p></p>
+      <ion-button class="custom-button" expand="block" (click)="cadastrar()">
+        <ion-icon name="person-add"></ion-icon> Cadastre-se
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
