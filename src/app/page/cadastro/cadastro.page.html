@@ -1,35 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Cadastro</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <div class="welcome-message">
+    
+    <p class="p1"><ion-icon name="pulse-outline"></ion-icon> <br> <strong>AppMonitoramento</strong></p>
+  </div>
   <div class="container">
     <ion-card>
-      <ion-card-header>
-        <ion-card-title>Crie sua conta</ion-card-title>
-      </ion-card-header>
       <ion-card-content>
         <form (submit)="registrar()">
+          <ion-card-header>
+            <ion-card-title>Vamos começar definindo suas credenciais</ion-card-title>
+          </ion-card-header>
           <ion-item>
-            <ion-label position="floating">Email</ion-label>
+            <ion-label position="floating" class="label">Email:</ion-label>
             <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">Senha</ion-label>
+            <ion-label position="floating"  class="label">Senha:</ion-label>
             <ion-input type="password" [(ngModel)]="senha" name="senha" required></ion-input>
           </ion-item>
-          <ion-button expand="block" type="submit">Cadastrar</ion-button>
+          <ion-button class="button-85" role="button" expand="block" type="submit">Cadastrar</ion-button>
           <ion-text color="danger">{{ mensagem }}</ion-text>
         </form>
       </ion-card-content>
     </ion-card>
+  </div>
+  <div class="image">
+      <img src="assets/cadastro.png" alt="Perfil">
   </div>
 </ion-content>

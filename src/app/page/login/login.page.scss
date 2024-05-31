@@ -1,36 +1,102 @@
-.container {
+ion-content {
+  --ion-background-color: rgb(255,255,255);
+  --background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 12%, rgba(0,99,177,1) 99%, rgba(0,120,166,1) 100%);
+} 
+
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding: 16px;
-    background-color: #f4f4f9; /* Cor de fundo suave */
+  }
+
+  .label{
+    color: #000;
   }
   
   ion-card {
     width: 100%;
     max-width: 400px;
-    --ion-background-color: #ffffff; /* Fundo branco para o card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para elevação */
+    background-color: transparent; 
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   
   ion-item {
-    --background: transparent; /* Remove o fundo preto */
-    --border-color: #ccc; /* Cor da borda suave */
-    --ion-color: #000; /* Cor do texto */
+    --background: transparent; 
+    --border-color: #000000; 
+    --ion-color: #000; 
   }
   
   ion-button {
-    margin-top: 16px;
+    margin-top: 20px;
+    --background: transparent; 
   }
-  
+
   ion-card-title {
     text-align: center;
+    color: #0051ff; /* letras azuis */
+    font-size: 18px;
+    text-align: center;
   }
+  
   
   ion-text {
     display: block;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 20px;
   }
+
+  .welcome-message {
+    color: #0051ff; /* letras azuis */
+    font-size: 26px;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  a{
+     text-decoration: none;
+  }
+
+  .link ion-text {
+   
+    color: #000000; /* letras azuis */
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: -20px;
+  }
+
+  ion-content .imagem{
+    display: flex;
+    justify-content:center ;
+  }
+
+  .image {
+    margin-left: 20%;
+    width: 250px;
+    position: relative;
+    animation: float 3s infinite;
+    filter: drop-shadow(0px 30px 19px #000000);
+    transition: transform 1s ease-in-out; /* Transição suave para rotação */
+  }
+  
+  .image.rotating {
+    transform: rotate(360deg);
+  }
+  
+   
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+
+
+
+
+
   

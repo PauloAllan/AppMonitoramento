@@ -24,7 +24,7 @@ export class CadastroPage implements OnInit {
           console.log('Usuario Cadastrado', result.user)
           alert('Cadastrado com sucesso');
 
-          this.navCtrl.navigateForward('/')
+          this.navCtrl.navigateForward('/dados-add')
         }
       ).catch(
         error => {

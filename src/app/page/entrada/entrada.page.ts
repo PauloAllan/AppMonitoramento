@@ -23,7 +23,7 @@ export class EntradaPage implements OnInit {
   showLoadingScreen() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 8000); // 10 segundos
+    }, 3000); // 10 segundos
   }
 
   mostrarProximaTela() {
