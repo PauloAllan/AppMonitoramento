@@ -1,4 +1,22 @@
-/* entrada.page.scss */
+ion-content {
+  --ion-background-color: rgb(255,255,255);
+  --background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 12%, rgba(0,99,177,1) 99%, rgba(0,120,166,1) 100%);
+  
+  // Adicione a classe fade-in
+  &.fade-in {
+    animation: fadeInAnimation 1s ease-in forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 ion-content {
   

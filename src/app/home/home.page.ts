@@ -59,4 +59,5 @@ export class HomePage implements OnInit {
       this.navCtrl.navigateRoot('/login');
     });
   }
+  
 }

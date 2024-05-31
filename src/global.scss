@@ -63,10 +63,20 @@
 
   form{
     margin-right: 10px;
+    
   }
 
   .native-wrapper{
     color: #000;
+    margin-top: 10px;
+  }
+
+  .titulo {
+    color: #0051ff; /* letras azuis */
+    font-family: "Rubik", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
   }
 
   .item{

@@ -3,24 +3,23 @@ import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-welcome',
-  templateUrl: './welcome.page.html',  
+  templateUrl: './welcome.page.html',
   styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage implements OnInit {
   private elts: any;
   private texts: string[] = [
-    "Seja",
-    "Bem vindo",
-    "ao",
+    "",
     "AppMonitorando",
     "<ion-icon name='pulse-outline'></ion-icon>"
   ];
-  private morphTime: number = 1; // 1 segundo para a animação de morphing
+  private morphTime: number = 3; // 1 segundo para a animação de morphing
   private cooldownTime: number = 1; // 0.5 segundos para o cooldown
   private textIndex: number = this.texts.length - 1;
   private time: Date = new Date();
   private morph: number = 0;
   private cooldown: number = this.cooldownTime;
+  private hasNavigated: boolean = false; // Controle para evitar navegação múltipla
 
   constructor(private navCtrl: NavController) {}
 
@@ -87,11 +86,11 @@ export class WelcomePage implements OnInit {
         this.textIndex++;
 
         // Verifica se a última frase foi exibida
-        if (this.textIndex >= this.texts.length) {
-          // Navega para a página /entrada com uma transição de flash
+        if (this.textIndex >= this.texts.length && !this.hasNavigated) {
+          this.hasNavigated = true; // Marca que a navegação já foi feita
           setTimeout(() => {
-            this.navigateToEntrada();
-          }, 9000); // Aguarde 1 segundo para o flash ocorrer
+            this.fadeOutAndNavigate();
+          }, 4000); // Aguarde 7 segundos para a transição
           return;
         }
       }
@@ -102,9 +101,23 @@ export class WelcomePage implements OnInit {
     }
   }
 
+  private fadeOutAndNavigate() {
+    // Verifique se o container não é nulo
+    const container = document.getElementById('container');
+    if (container) {
+      container.classList.add('fade-out');
+
+      // Aguarde a transição de opacidade terminar antes de navegar
+      setTimeout(() => {
+        this.navigateToEntrada();
+      }, 2000); // Correspondendo ao tempo de transição em .fade-out
+    } else {
+      // Se o container for nulo, navegue imediatamente
+      this.navigateToEntrada();
+    }
+  }
+
   private navigateToEntrada() {
     this.navCtrl.navigateForward('/entrada');
   }
-
-  
 }
