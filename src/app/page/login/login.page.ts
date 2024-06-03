@@ -12,8 +12,14 @@ export class LoginPage implements OnInit {
   email:string="";
   senha:string="";
   mensagem:string="";
+  passwordFieldType: string = 'password';  // Added to control password field type
 
   constructor(private service:FirebaseloginService, private navCtrl:NavController) { }
+
+
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+  }
 
   login(){
     if(this.email && this.senha){

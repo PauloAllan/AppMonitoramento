@@ -35,7 +35,7 @@ ion-content {
   ion-card-title {
     text-align: center;
     color: #0051ff; /* letras azuis */
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
   }
   
@@ -50,15 +50,23 @@ ion-content {
     color: #0051ff; /* letras azuis */
     font-size: 26px;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 20px;
+  }
+
+  .welcome-message img{
+    width: 230px;
   }
 
   a{
      text-decoration: none;
   }
 
-  .link ion-text {
-   
+  .mensagem{
+    color: #ff0000;
+    font-size: 18px;
+  }
+
+  .link {
     color: #000000; /* letras azuis */
     font-size: 16px;
     text-align: center;

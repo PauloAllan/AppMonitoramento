@@ -9,12 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { configuracao } from './configuracao';
 import { AngularFireModule } from '@angular/fire/compat'
-
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(configuracao),],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [BrowserModule, NgxMaskDirective, NgxMaskPipe, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(configuracao),],
+  providers: [{ provide: RouteReuseStrategy,   useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

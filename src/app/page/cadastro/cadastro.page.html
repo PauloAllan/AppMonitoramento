@@ -1,33 +1,28 @@
-
-
 <ion-content [fullscreen]="true">
   <div class="welcome-message">
-    
-    <p class="p1"><ion-icon name="pulse-outline"></ion-icon> <br> <strong>AppMonitoramento</strong></p>
+    <img src="assets/logo/logotipo2.png" alt="Logotipo">
   </div>
   <div class="container">
     <ion-card>
       <ion-card-content>
         <form (submit)="registrar()">
-          <ion-card-header>
-            <h1 class="titulo">Área de Cadastro</h1>
+            <h1 class="titulo">Cadastro</h1>
             <ion-card-title>Vamos começar definindo suas credenciais</ion-card-title>
-          </ion-card-header>
-          <ion-item>
+          <ion-item class="ion-item-custom">
             <ion-label position="floating" class="label">Email:</ion-label>
             <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
           </ion-item>
-          <ion-item>
-            <ion-label position="floating"  class="label">Senha:</ion-label>
-            <ion-input type="password" [(ngModel)]="senha" name="senha" required></ion-input>
+          <ion-item class="ion-item-custom">
+            <ion-label position="floating" class="label">Senha:</ion-label>
+            <ion-input [type]="passwordFieldType" [(ngModel)]="senha" name="senha" required><ion-icon name="{{passwordFieldType === 'password' ? 'eye-off' : 'eye'}}" slot="end" (click)="togglePasswordVisibility()"></ion-icon></ion-input> 
           </ion-item>
           <ion-button class="button-85" role="button" expand="block" type="submit">Cadastrar</ion-button>
-          <ion-text color="danger">{{ mensagem }}</ion-text>
+          <ion-text class="mensagem">{{ mensagem }}</ion-text>
         </form>
       </ion-card-content>
     </ion-card>
   </div>
   <div class="image">
-      <img src="assets/cadastro.png" alt="Perfil">
+    <img src="assets/cadastro.png" alt="Perfil">
   </div>
 </ion-content>

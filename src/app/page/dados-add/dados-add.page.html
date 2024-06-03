@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
   <div class="welcome-message">
-    <p class="p1"><ion-icon name="pulse-outline"></ion-icon> <br> <strong>AppMonitoramento</strong></p>
+    <img src="assets/logo/logotipo2.png" alt="">
   </div>
 
 <div *ngIf="section1">
@@ -9,10 +9,10 @@
     <ion-card>
       <ion-card-content>
         <form (submit)="atualizarDados()">
-          <ion-card-header>
+          
             <h1 class="titulo">Dados Adicionais</h1>
             <ion-card-title>Como podemos te chamar?</ion-card-title>
-          </ion-card-header>
+        
           <ion-item>
             <ion-label position="floating">Nome ou Apelido</ion-label>
             <ion-input type="text" [(ngModel)]="novoNome" name="novoNome" required></ion-input>
@@ -27,12 +27,12 @@
     <ion-card>
       <ion-card-content>
         <form (submit)="atualizarDados()">
-          <ion-card-header>
+          
             <h1 class="titulo">Mais uma pergunta</h1>
             <ion-card-title>Qual é a sua data de nascimento?</ion-card-title>
-          </ion-card-header>
+         
           <ion-item>
-            <ion-label position="floating">Data de Nascimento</ion-label>
+            <ion-label position="floating"></ion-label>
             <ion-input type="date" [(ngModel)]="novaIdade" name="novaIdade" required></ion-input>
           </ion-item>
           <ion-button class="button-85" role="button" expand="block" type="submit">continuar</ion-button>
@@ -45,20 +45,20 @@
     <ion-card>
       <ion-card-content>
         <form (submit)="atualizarDados()">
-          <ion-card-header>
+         
             <h1 class="titulo">Mais uma pergunta</h1>
             <ion-card-title>Qual é o seu gênero?</ion-card-title>
-          </ion-card-header>
+         <br>
           <ion-radio-group [(ngModel)]="novoGenero" name="novoGenero" required>
-            <ion-item>
+            <ion-item class="custom-radio-item">
               <ion-label>Masculino</ion-label>
               <ion-radio slot="start" value="masculino"></ion-radio>
             </ion-item>
-            <ion-item>
+            <ion-item class="custom-radio-item">
               <ion-label>Feminino</ion-label>
               <ion-radio slot="start" value="feminino"></ion-radio>
             </ion-item>
-            <ion-item>
+            <ion-item class="custom-radio-item">
               <ion-label>Outros</ion-label>
               <ion-radio slot="start" value="outros"></ion-radio>
             </ion-item>
@@ -68,15 +68,16 @@
       </ion-card-content>
     </ion-card>
   </div>
+  
 
   <div class="section-4" *ngIf="section === 4">
     <ion-card>
       <ion-card-content>
         <form (submit)="atualizarDados()">
-          <ion-card-header>
+         
             <h1 class="titulo">Mais uma pergunta</h1>
             <ion-card-title>Qual é o seu peso em kg?</ion-card-title>
-          </ion-card-header>
+  
           <ion-item>
             <ion-label position="floating">Peso</ion-label>
             <ion-input type="number" [(ngModel)]="novoPeso" name="novoPeso" required></ion-input>
@@ -91,10 +92,10 @@
     <ion-card>
       <ion-card-content>
         <form (submit)="atualizarDados()">
-          <ion-card-header>
+        
             <h1 class="titulo">Mais uma pergunta</h1>
             <ion-card-title>Qual é o seu CPF?</ion-card-title>
-          </ion-card-header>
+
           <ion-item>
             <ion-label position="floating">CPF</ion-label>
             <ion-input type="text" [(ngModel)]="novoCPF" name="novoCPF" required></ion-input>
@@ -110,6 +111,7 @@
       <ion-card-content>
         <h1 class="titulo">Confirmação</h1>
         <ion-card-title>Por favor, confirme suas informações:</ion-card-title>
+        <div class="infos">
         <ion-item>
           <ion-label>Nome:</ion-label>
           <ion-input [(ngModel)]="novoNome" disabled></ion-input>
@@ -130,8 +132,9 @@
           <ion-label>CPF:</ion-label>
           <ion-input [(ngModel)]="novoCPF" disabled></ion-input>
         </ion-item>
+      </div>
         <ion-button class="button-85" role="button" expand="block"  (click)="confirmarDados()" (click)="section2()">Confirmar</ion-button>
-        <ion-button class="button-85" role="button" expand="block"  (click)="editarDados()">Editar</ion-button>
+        <ion-button class="button-85 btn2" role="button" expand="block"  (click)="editarDados()">Editar</ion-button>
       </ion-card-content>
     </ion-card>
   </div>  

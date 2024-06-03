@@ -10,11 +10,10 @@ export class WelcomePage implements OnInit {
   private elts: any;
   private texts: string[] = [
     "",
-    "AppMonitorando",
-    "<ion-icon name='pulse-outline'></ion-icon>"
+    '<img src="assets/logo/logoAll.png" alt="Perfil">',
   ];
-  private morphTime: number = 3; // 1 segundo para a animação de morphing
-  private cooldownTime: number = 1; // 0.5 segundos para o cooldown
+  private morphTime: number = 1; // 1 segundo para a animação de morphing
+  private cooldownTime: number = 3; // 0.5 segundos para o cooldown
   private textIndex: number = this.texts.length - 1;
   private time: Date = new Date();
   private morph: number = 0;
@@ -90,7 +89,7 @@ export class WelcomePage implements OnInit {
           this.hasNavigated = true; // Marca que a navegação já foi feita
           setTimeout(() => {
             this.fadeOutAndNavigate();
-          }, 4000); // Aguarde 7 segundos para a transição
+          }, 6000); // Aguarde 7 segundos para a transição
           return;
         }
       }

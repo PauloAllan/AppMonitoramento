@@ -25,6 +25,8 @@ export class DadosAddPage implements OnInit {
     // Você pode carregar os dados do usuário aqui, se necessário
   }
 
+  
+
   atualizarDados() {
     // Seção 1: Atualizar nome
     if (this.section === 1) {

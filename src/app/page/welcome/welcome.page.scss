@@ -14,10 +14,10 @@
 #text1, #text2 {
   position: absolute;
   font-family: "Yanone Kaffeesatz";
-  font-size: 45px;
+  width: 300px;
   font-weight: 700;
   display: flex;
-  bottom: 50vh;
+  bottom: 40vh;
   left: 50%;
   transform: translateX(-50%);
   user-select: none;

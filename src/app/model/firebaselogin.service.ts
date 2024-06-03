@@ -23,6 +23,23 @@ export class FirebaseloginService {
     return this.autenticar.signOut();
   }
 
+  resetarSenha(email: string) {
+    return this.autenticar.sendPasswordResetEmail(email);
+  }  
+
+  checkEmailExists(email: string): Promise<boolean> {
+    return this.autenticar.fetchSignInMethodsForEmail(email)
+      .then(signInMethods => {
+        return signInMethods.length > 0; // Retorna true se o email existe
+      })
+      .catch(error => {
+        console.error('Erro ao verificar email:', error);
+        return false; // Em caso de erro, assume-se que o email não existe
+      });
+  }
+  
+  
+
   getAuthState(): Observable<any> {
     return this.autenticar.authState;
   }
